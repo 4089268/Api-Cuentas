@@ -1,8 +1,5 @@
-import express from 'express';
-import { NODE_ENV, PORT } from './config/config';
+import App from './app';
+import BaseRoute from './routes/base.route';
 
-const app = express();
-
-app.listen ( PORT, () => {
-    console.log(`API running on Mode:${NODE_ENV} Port:${PORT}`, process.env.NODE_ENV);
-});
+const app = new App([new BaseRoute()]);
+app.listen();

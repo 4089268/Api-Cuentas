@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/msi.juliocesarortegamoreno/Proyectos/Coatepec/api-pagos/src/logs/debug/.fb0c3bf65c62c278d1e89f2ee36b2c98a191aa0c-audit.json",
+    "files": [
+        {
+            "date": 1684274743613,
+            "name": "/Users/msi.juliocesarortegamoreno/Proyectos/Coatepec/api-pagos/src/logs/debug/2023-05-16.log",
+            "hash": "e96502b3ea378321c2f4349902f82b43d7dcd40235dac576d2b4e8f53ad18601"
+        }
+    ],
+    "hashType": "sha256"
+}
