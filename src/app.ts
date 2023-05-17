@@ -10,6 +10,7 @@ import cookieParser from "cookie-parser";
 import { stream } from './utils/logger'
 import corsConfig from "./config/coors.config";
 import cors from "cors";
+import { mySqlConnection } from "./db/mysql.config";
 
 class App {
     public app: express.Application;
@@ -49,7 +50,7 @@ class App {
         return this.app;
     }
     private connectToDataBase(){
-        //TODO: Inicializar la conexion a la base de datos
+        mySqlConnection();
     }
     public closeServer(done?: any){
         this.server = this.app.listen(this.port, () => {
