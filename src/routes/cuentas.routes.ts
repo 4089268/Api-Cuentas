@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { Routes } from "../interfaces/route.interface";
+
 import CuentasController from "../cuentas/cuentas.controller";
 
 class CuentasRoute implements Routes {
@@ -8,6 +9,7 @@ class CuentasRoute implements Routes {
     public cuentasController = new CuentasController();
 
     constructor(){
+        console.log(`(-) Inicializando cuentas Route`);
         this.initCuentasRoute();
     }
 
