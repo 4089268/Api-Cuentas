@@ -1,4 +1,4 @@
-import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { PagoEntity } from "../../pagos/entities/pagos.entity";
 
 @Entity({name: "cuentas"})
@@ -25,10 +25,11 @@ export class CuentaEntity {
     @Column({ type: "varchar", width: 20 })
     periodo? : string; 
 
-    @Column({ type: "decimal", width: 12.4 })
+    @Column({ type: "decimal", precision: 12, scale : 4, default: 0 })
     saldo! : number;
 
     @Column({name: "ultima_actualizacion"})
+    @UpdateDateColumn()
     ultimaActualizacion! : Date;
 
     @OneToMany( () => PagoEntity, (pago) => pago.cuenta )

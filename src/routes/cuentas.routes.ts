@@ -17,7 +17,8 @@ class CuentasRoute implements Routes {
         this.router.get( `${this.path}`, this.cuentasController.obtenerCuentas);
         this.router.get( `${this.path}/:id`, this.cuentasController.obtenerDetalleCuenta );
         this.router.post( `${this.path}`, this.cuentasController.agregarCuenta );
-        this.router.put( `${this.path}/:id`, this.cuentasController. actualizarCuentaPorId);
+        this.router.put( `${this.path}/:id`, this.cuentasController.actualizarCuentaPorId);
+        this.router.delete( `${this.path}/:id`, this.cuentasController.eliminarCuentaPorId);
     }
 
 }
