@@ -14,7 +14,7 @@ export class PagoEntity {
     message! : string;
 
     @Column({ type: "varchar", width: 250 })
-    referencia? : string; 
+    referencia! : string; 
 
     @Column({ type: "bit"})
     exito! : number;
