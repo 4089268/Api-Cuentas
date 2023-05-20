@@ -1,6 +1,5 @@
 import express from "express";
 import displayRoutes from "express-routemap";
-
 import {API_VERSION, LOG_FORMAT, NODE_ENV, PORT} from "./config/config";
 import {Routes} from "./interfaces/route.interface";
 import morgan from "morgan";
@@ -11,6 +10,7 @@ import { stream } from './utils/logger'
 import corsConfig from "./config/coors.config";
 import cors from "cors";
 import { mySqlConnection } from "./db/mysql.config";
+
 
 class App {
     public app: express.Application;
@@ -23,9 +23,9 @@ class App {
         this.env = NODE_ENV || "development";
         this.port = Number(PORT) || 50001;
 
-        this.initializeRoutes(routes);
         this.connectToDataBase();
         this.initializeMiddlewares();
+        this.initializeRoutes(routes);
         this.initializeSwagger();
         this.initializeErrorHandling();
     }
@@ -49,9 +49,11 @@ class App {
     public getServer(){
         return this.app;
     }
+
     private connectToDataBase(){
         mySqlConnection();
     }
+
     public closeServer(done?: any){
         this.server = this.app.listen(this.port, () => {
             done;
